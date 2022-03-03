@@ -1,9 +1,11 @@
 #include <iostream>
 #include <vector>
 
-class Solution {
+class Solution
+{
 public:
-    void rotate(std::vector<std::vector<int>>& matrix) {
+    void rotate(std::vector<std::vector<int>>& matrix)
+    {
         int l = 0;
         int r = matrix.size() - 1;
 
@@ -15,7 +17,7 @@ public:
 
                 // saving the top left value
                 auto top_left = matrix[top][l + i];
-                
+
                 // moving bottom left -> top left
                 matrix[top][l + i] = matrix[bottom - i][l];
                 // moving bottom right -> bottom left
@@ -23,7 +25,7 @@ public:
                 // moving top right to bottom right
                 matrix[bottom][r - i] = matrix[top + i][r];
                 // moving top left to top right
-                matrix[top + i][r] = top_left; 
+                matrix[top + i][r] = top_left;
             }
             // As we finish moving one row then we move to next one
             l++;

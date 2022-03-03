@@ -1,8 +1,10 @@
 #include <iostream>
 
-class Solution {
+class Solution
+{
 public:
-    int reverse(int x) {
+    int reverse(int x)
+    {
         if (x == 0 || x <= INT_MIN || x >= INT_MAX)
             return 0;
 

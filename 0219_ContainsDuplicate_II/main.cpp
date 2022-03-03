@@ -2,9 +2,11 @@
 #include <vector>
 #include <unordered_map>
 
-class Solution {
+class Solution
+{
 public:
-    bool containsNearbyDuplicate(std::vector<int>& nums, int k) {
+    bool containsNearbyDuplicate(std::vector<int>& nums, int k)
+    {
         std::unordered_map<int, int> map;
 
         for (auto i = 0; i < nums.size(); i++)
@@ -23,12 +25,12 @@ int main()
 {
     Solution s;
 
-    std::vector<int> vec1{1,2,3,1};
+    std::vector<int> vec1 { 1, 2, 3, 1 };
     std::cout << s.containsNearbyDuplicate(vec1, 3) << std::endl;
 
-    std::vector<int> vec2{1,0,1,1};
+    std::vector<int> vec2 { 1, 0, 1, 1 };
     std::cout << s.containsNearbyDuplicate(vec2, 1) << std::endl;
 
-    std::vector<int> vec3{1,2,3,1,2,3};
+    std::vector<int> vec3 { 1, 2, 3, 1, 2, 3 };
     std::cout << s.containsNearbyDuplicate(vec3, 2) << std::endl;
 }

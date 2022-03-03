@@ -3,9 +3,11 @@
 #include <unordered_map>
 #include <algorithm>
 
-class Solution {
+class Solution
+{
 public:
-    bool containsDuplicate(std::vector<int>& nums) {
+    bool containsDuplicate(std::vector<int>& nums)
+    {
         std::unordered_map<int, int> map;
         for (auto i = 0; i < nums.size(); i++)
         {
@@ -31,12 +33,12 @@ int main()
 {
     Solution s;
 
-    std::vector<int> vec1{1,2,3,1};
+    std::vector<int> vec1 { 1, 2, 3, 1 };
     std::cout << s.containsDuplicate(vec1) << std::endl;
 
-    std::vector<int> vec2{1,2,3,4};
+    std::vector<int> vec2 { 1, 2, 3, 4 };
     std::cout << s.containsDuplicate(vec2) << std::endl;
 
-    std::vector<int> vec3{1,1,1,3,3,4,3,2,4,2};
+    std::vector<int> vec3 { 1, 1, 1, 3, 3, 4, 3, 2, 4, 2 };
     std::cout << s.containsDuplicate(vec3) << std::endl;
 }
