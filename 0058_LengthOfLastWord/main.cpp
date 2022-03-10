@@ -7,14 +7,12 @@ class Solution
 public:
     int lengthOfLastWord(std::string str)
     {
-        str.erase(std::find_if(str.rbegin(), str.rend(), [](unsigned char s) {
-            return !std::isspace(s);
-        }).base(), str.end());
+        str.erase(std::find_if(str.rbegin(), str.rend(), [](unsigned char s) { return !std::isspace(s); }).base(), str.end());
 
         int size = str.size();
-        
+
         int length = 0;
-        
+
         for (auto i = size - 1; i >= 0; i--)
         {
             if (str[i] != ' ')

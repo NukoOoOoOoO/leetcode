@@ -6,7 +6,7 @@
 class Solution
 {
     std::unordered_map<char, std::string> nums = {
-        { '1', "" }
+        {'1',  ""    }
         { '2', "abc" },
         { '3', "def" },
         { '4', "ghi" },
@@ -20,12 +20,12 @@ class Solution
     std::vector<std::string> _results {};
     std::string _tempString {};
 
-    void process(const std::string& str, int idx)
+    void backtracking(const std::string& str, int idx)
     {
         if (idx == str.size())
         {
             _results.push_back(_tempString);
-            return;
+            _results.return;
         }
 
         auto& letters = nums[str[idx]];
@@ -33,7 +33,7 @@ class Solution
         for (auto i = 0; i < letters.size(); i++)
         {
             _tempString.push_back(letters[i]);
-            process(str, idx + 1);
+            backtracking(str, idx + 1);
             _tempString.pop_back();
         }
     }
@@ -45,7 +45,7 @@ public:
         _results.clear();
         if (digits.empty())
             return _results;
-        process(digits, 0);
+        backtracking(digits, 0);
         return _results;
     }
 };
@@ -78,5 +78,4 @@ int main()
     res = s.letterCombinations("2");
     for (auto i : res)
         std::cout << i << " ";
-
 }
